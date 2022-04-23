@@ -3,7 +3,11 @@
 
 ## Requirements
 
-
+```
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+```
 
 ## Data
 
@@ -13,6 +17,27 @@ Your data repository should contain the following files:
 
 TODO: structure of files
 
+```
+data/
+ |
+ |---- orig/
+ |     |-- titres_and_sommaires.csv
+ |     |-- meta_decisions_INRIA.csv
+ |
+ |---- final/
+ |     |-- dataset.tsv
+ |     |-- {train,valid,test}.tsv
+ |     |-- {train,valid,test}.{matiere,sommaire,titrage}
+ |     |-- {train,valid,test}.lowercase.{matiere,sommaire,titrage}
+ |
+ |---- preproc/
+ |     |-- {train,valid,test}.lowercase.sommaitre-titrage.{sommaire,titrage}
+ |
+ |---- bin/
+ |     |-- 
+```
+
+`orig/` contains the original files will all raw information, `final/` the cleaned dataset splits, `preproc/` the preprocessed files (lowercasing and sentencepiece segmentation) and `bin/` the binarised files to be used by fairseq.
 
 ## Reproduce the data splits
 
