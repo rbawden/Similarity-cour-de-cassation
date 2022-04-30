@@ -75,6 +75,7 @@ A. Extract different information from the similarity dataset:
 ```
 bash scripts/prepare_similarity_data.sh
 ```
+The extracted information can be found in `data/similarity/dataset` for the original (gold) information and `data/similarity/predicted/` for the predicted information.
 
 Part of step A requires the predicted keyword sequences to have been generated. If they have not been generated, you will receive a warning message. You should run step B (below) and then run step A a second time once the predicted files are present.
 
@@ -82,4 +83,10 @@ B. Generate predicted keyword sequences (make sure to adapt to your own schedule
 ```
 sbatch scripts/predict_titrages.slurm
 ```
+The predicted sequences can be found in `data/similarity/predicted/`
 
+C. Produce the different features that are tested:
+```
+bash scripts/produce_similarity_features.sh
+```
+Features are output to `data/similarity/features/`
