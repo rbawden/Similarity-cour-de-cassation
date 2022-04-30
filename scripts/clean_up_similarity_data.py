@@ -122,6 +122,8 @@ for e, example in enumerate(annot_data):
         blank_example = blank_data[(example['ID_DOCUMENT2'], example['ID_DOCUMENT'])]
         blank_example = blank_example[1], blank_example[0]
 
+    #print(example['ID_CHAMBRE1'])
+    #print(blank_example[0]['ID_CHAMBRE'])
     assert example['ID_CHAMBRE1'] == blank_example[0]['ID_CHAMBRE']
     assert example['ID_CHAMBRE2'] == blank_example[1]['ID_CHAMBRE']
     assert example['TITRAGE'] == blank_example[0]['TITRAGE']
@@ -130,9 +132,9 @@ for e, example in enumerate(annot_data):
         assert example['SOMMAIRE'] == blank_example[0]['SOMMAIRE']
 
     # get titrage from test set - always corresponds to first document (checked this)
-    tiso_titrages1 = doc1[['PM', 'AM1', 'AM2', 'AM3', 'AM4', 'AM5', 'AM6', 'AM7', 'AM8', 'AM9', 'AM10', 'AM11', 'AM12']].values[0:1]
+    tiso_titrages1 = doc1[['PM', 'AM1', 'AM2', 'AM3', 'AM4', 'AM5', 'AM6', 'AM7', 'AM8', 'AM9', 'AM10', 'AM11', 'AM12']].values#[0:1]
     tiso_titrages1 = [list(x) for x in tiso_titrages1]
-    tiso_titrages2 = doc2[['PM', 'AM1', 'AM2', 'AM3', 'AM4', 'AM5', 'AM6', 'AM7', 'AM8', 'AM9', 'AM10', 'AM11', 'AM12']].values[0:1]
+    tiso_titrages2 = doc2[['PM', 'AM1', 'AM2', 'AM3', 'AM4', 'AM5', 'AM6', 'AM7', 'AM8', 'AM9', 'AM10', 'AM11', 'AM12']].values#[0:1]
     tiso_titrages2 = [list(x) for x in tiso_titrages2]
     
     str_tiso_titrages1 = [' | '.join([x.strip() for x in tiso_titrage1 if str(x) != 'nan']).lower() for tiso_titrage1 in tiso_titrages1]

@@ -56,7 +56,7 @@ def accuracy_per_level(hyps, refs):
     return [level2count[level]['correct']/level2count[level]['total'] for level in sorted(level2count)]
 
 def weighted_from_level_acc(accuracies):
-    weights = [1 / (3.85 * (n**0.8)) for n in range(1, len(accuracies) + 1)]
+    weights = [1/ (3.85 * (n**0.8)) for n in range(1, len(accuracies) + 1)]
     return sum([acc * weights[a] for a, acc in enumerate(accuracies)])
 
 # macro-averge of accuracies per level                
