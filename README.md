@@ -67,3 +67,19 @@ echo "contrat <t> la convention collective du batiment doit être calculée en f
 
 TODO: check other types of preprocessing that must be applied for this model to work (e.g. apostrophes, lowercasing, accents?)
 
+### Similarity prediction
+
+The dataset and features are all provided, so there is no need to rerun generation, but for reproducibility purposes, the data and features are prepared as follows:
+
+A. Extract different information from the similarity dataset:
+```
+bash scripts/prepare_similarity_data.sh
+```
+
+Part of step A requires the predicted keyword sequences to have been generated. If they have not been generated, you will receive a warning message. You should run step B (below) and then run step A a second time once the predicted files are present.
+
+B. Generate predicted keyword sequences (make sure to adapt to your own scheduler or working environment):
+```
+sbatch scripts/predict_titrages.slurm
+```
+
