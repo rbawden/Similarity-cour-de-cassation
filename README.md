@@ -71,21 +71,21 @@ TODO: check other types of preprocessing that must be applied for this model to 
 
 The dataset and features are all provided, so there is no need to rerun generation, but for reproducibility purposes, the data and features are prepared as follows:
 
-A. Extract different information from the similarity dataset:
+1. Extract different information from the similarity dataset:
 ```
 bash scripts/prepare_similarity_data.sh
 ```
 The extracted information can be found in `data/similarity/dataset` for the original (gold) information and `data/similarity/predicted/` for the predicted information.
 
-Part of step A requires the predicted keyword sequences to have been generated. If they have not been generated, you will receive a warning message. You should run step B (below) and then run step A a second time once the predicted files are present.
+Part of step 1 requires the predicted keyword sequences to have been generated. If they have not been generated, you will receive a warning message. You should run step B (below) and then run step A a second time once the predicted files are present.
 
-B. Generate predicted keyword sequences (make sure to adapt to your own scheduler or working environment):
+2. Generate predicted keyword sequences (make sure to adapt to your own scheduler or working environment):
 ```
 sbatch scripts/predict_titrages.slurm
 ```
 The predicted sequences can be found in `data/similarity/predicted/`
 
-C. Produce the different features that are tested:
+3. Produce the different features that are tested:
 ```
 bash scripts/produce_similarity_features.sh
 ```
