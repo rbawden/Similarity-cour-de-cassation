@@ -1,0 +1,3 @@
+mlp.tfidf.sommaires.gold__edsim.sommaires.gold	model type	mlp
+mlp.tfidf.sommaires.gold__edsim.sommaires.gold	#features	2
+mlp.tfidf.sommaires.gold__edsim.sommaires.gold	trained r	0.74469213036367

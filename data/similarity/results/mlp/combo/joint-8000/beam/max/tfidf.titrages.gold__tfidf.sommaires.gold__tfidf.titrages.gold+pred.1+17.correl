@@ -1,3 +1,3 @@
-mlp.tfidf.titrages.gold__tfidf.sommaires.gold__tfidf.titrages.pred.joint-8000.beam.max.17	model type	mlp
-mlp.tfidf.titrages.gold__tfidf.sommaires.gold__tfidf.titrages.pred.joint-8000.beam.max.17	#features	3
-mlp.tfidf.titrages.gold__tfidf.sommaires.gold__tfidf.titrages.pred.joint-8000.beam.max.17	trained r	0.8486795236585747
+mlp.tfidf.titrages.gold__tfidf.sommaires.gold__tfidf.titrages.gold+pred.joint-8000.beam.max.1+17	model type	mlp
+mlp.tfidf.titrages.gold__tfidf.sommaires.gold__tfidf.titrages.gold+pred.joint-8000.beam.max.1+17	#features	3
+mlp.tfidf.titrages.gold__tfidf.sommaires.gold__tfidf.titrages.gold+pred.joint-8000.beam.max.1+17	trained r	0.8486795236585747
