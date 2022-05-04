@@ -1,0 +1,4 @@
+mlp.edsim.arrets.gold	model type	mlp
+mlp.edsim.arrets.gold	#features	1
+mlp.edsim.arrets.gold	non-trained r	 0.11114627220968272
+mlp.edsim.arrets.gold	trained r	0.10725008269082659

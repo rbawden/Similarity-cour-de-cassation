@@ -1,0 +1,4 @@
+mlp.tfidf.titrages.gold+pred.joint-8000.beam.max.1+13	model type	mlp
+mlp.tfidf.titrages.gold+pred.joint-8000.beam.max.1+13	#features	1
+mlp.tfidf.titrages.gold+pred.joint-8000.beam.max.1+13	non-trained r	 0.7094951240505373
+mlp.tfidf.titrages.gold+pred.joint-8000.beam.max.1+13	trained r	0.7805923131104416

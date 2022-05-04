@@ -1,0 +1,4 @@
+mlp.tfidf.sommaires.gold	model type	mlp
+mlp.tfidf.sommaires.gold	#features	1
+mlp.tfidf.sommaires.gold	non-trained r	 0.6049749785390208
+mlp.tfidf.sommaires.gold	trained r	0.7416706752777331

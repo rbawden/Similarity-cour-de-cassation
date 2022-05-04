@@ -1,0 +1,3 @@
+mlp.edsim.titrages.gold__edsim.titrages.pred.joint-8000.beam.avg.5	model type	mlp
+mlp.edsim.titrages.gold__edsim.titrages.pred.joint-8000.beam.avg.5	#features	2
+mlp.edsim.titrages.gold__edsim.titrages.pred.joint-8000.beam.avg.5	trained r	0.7152785635472145

@@ -1,0 +1,4 @@
+mlp.tfidf.titrages.pred.joint-8000.beam.max.8	model type	mlp
+mlp.tfidf.titrages.pred.joint-8000.beam.max.8	#features	1
+mlp.tfidf.titrages.pred.joint-8000.beam.max.8	non-trained r	 0.6878774822362319
+mlp.tfidf.titrages.pred.joint-8000.beam.max.8	trained r	0.758387000274753

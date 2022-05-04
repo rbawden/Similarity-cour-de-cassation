@@ -1,0 +1,4 @@
+mlp.tfidf.titrages.pred.joint-8000.beam.avg.19	model type	mlp
+mlp.tfidf.titrages.pred.joint-8000.beam.avg.19	#features	1
+mlp.tfidf.titrages.pred.joint-8000.beam.avg.19	non-trained r	 0.7507358010641134
+mlp.tfidf.titrages.pred.joint-8000.beam.avg.19	trained r	0.7786996466391677
