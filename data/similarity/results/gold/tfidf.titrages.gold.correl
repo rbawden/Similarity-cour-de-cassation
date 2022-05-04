@@ -1,0 +1,4 @@
+mlp.tfidf.titrages.gold	model type	mlp
+mlp.tfidf.titrages.gold	#features	1
+mlp.tfidf.titrages.gold	non-trained r	 0.7361258293681879
+mlp.tfidf.titrages.gold	trained r	0.7775039625107085

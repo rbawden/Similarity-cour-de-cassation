@@ -1,0 +1,4 @@
+mlp.edsim.titrages.pred.joint-8000.beam.max.18	model type	mlp
+mlp.edsim.titrages.pred.joint-8000.beam.max.18	#features	1
+mlp.edsim.titrages.pred.joint-8000.beam.max.18	non-trained r	 0.677880131573894
+mlp.edsim.titrages.pred.joint-8000.beam.max.18	trained r	0.7038519799825822

@@ -1,0 +1,4 @@
+mlp.edsim.titrages.pred.joint-8000.beam.avg.11	model type	mlp
+mlp.edsim.titrages.pred.joint-8000.beam.avg.11	#features	1
+mlp.edsim.titrages.pred.joint-8000.beam.avg.11	non-trained r	 0.6051979381399765
+mlp.edsim.titrages.pred.joint-8000.beam.avg.11	trained r	0.6642938317994871

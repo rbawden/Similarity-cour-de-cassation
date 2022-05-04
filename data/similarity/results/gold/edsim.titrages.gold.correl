@@ -1,0 +1,4 @@
+mlp.edsim.titrages.gold	model type	mlp
+mlp.edsim.titrages.gold	#features	1
+mlp.edsim.titrages.gold	non-trained r	 0.6379947404747753
+mlp.edsim.titrages.gold	trained r	0.6424368739347441

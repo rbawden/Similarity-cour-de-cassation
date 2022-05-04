@@ -1,0 +1,4 @@
+mlp.tfidf.arrets.gold	model type	mlp
+mlp.tfidf.arrets.gold	#features	1
+mlp.tfidf.arrets.gold	non-trained r	 0.04502873331883073
+mlp.tfidf.arrets.gold	trained r	0.03700656319095762

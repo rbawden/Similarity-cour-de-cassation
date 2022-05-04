@@ -1,0 +1,4 @@
+mlp.edsim.sommaires.gold	model type	mlp
+mlp.edsim.sommaires.gold	#features	1
+mlp.edsim.sommaires.gold	non-trained r	 0.3863719667790272
+mlp.edsim.sommaires.gold	trained r	0.4942378748693059

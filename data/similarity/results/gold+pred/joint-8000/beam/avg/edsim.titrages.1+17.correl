@@ -1,0 +1,4 @@
+mlp.edsim.titrages.gold+pred.joint-8000.beam.avg.1+17	model type	mlp
+mlp.edsim.titrages.gold+pred.joint-8000.beam.avg.1+17	#features	1
+mlp.edsim.titrages.gold+pred.joint-8000.beam.avg.1+17	non-trained r	 0.616452070851667
+mlp.edsim.titrages.gold+pred.joint-8000.beam.avg.1+17	trained r	0.6887923718131801
