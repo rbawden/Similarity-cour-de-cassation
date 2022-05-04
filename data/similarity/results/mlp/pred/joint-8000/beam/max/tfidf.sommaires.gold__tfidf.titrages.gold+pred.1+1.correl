@@ -1,3 +1,0 @@
-mlp.tfidf.sommaires.gold__tfidf.titrages.pred.joint-8000.beam.max.1	model type	mlp
-mlp.tfidf.sommaires.gold__tfidf.titrages.pred.joint-8000.beam.max.1	#features	2
-mlp.tfidf.sommaires.gold__tfidf.titrages.pred.joint-8000.beam.max.1	trained r	0.845085120886297
