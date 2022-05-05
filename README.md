@@ -90,3 +90,9 @@ The predicted sequences can be found in `data/similarity/predicted/`
 bash scripts/produce_similarity_features.sh
 ```
 Features are output to `data/similarity/features/`
+
+4. Calculate the main similarity correlations
+```
+bash scripts/get_sim_results.sh
+```
+Results are output to `data/similarity/results/`
