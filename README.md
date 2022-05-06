@@ -3,6 +3,7 @@
 
 ## Requirements
 
+Tested with python3.7
 ```
 python3 -m venv env
 source env/bin/activate
@@ -11,11 +12,11 @@ pip install -r requirements.txt
 
 ## Data
 
-The data is distributed under the licence specified in XXX. To obtain the data, please contact XXX. Once you have obtained the data, unzip the folder and place it at the root of the repository.
+The data is distributed under the licence specified in XXX. To obtain the data, please contact XXX. 
 
-Your data repository should contain the following files:
+Once you have obtained the data, unzip the folder and place it at the root of the repository. The current repository contains a partial version of this data, containing just the extracted features and correlation results.
 
-TODO: structure of files
+The full data repository should contain the following files:
 
 ```
 data/
