@@ -30,13 +30,13 @@ bash $thisdir/preprocess_sommaire.sh $sp_model > $output.preproc
 # apply translation
 cat $output.preproc | \
     fairseq-interactive $data_dir --path $model_path --batch-size 4 --buffer-size 4 \
-    -s sommaire -t titrage --nbest $n $sampling_param $beam_param --truncate-source --max-source-positions 508 \
+    -s sommaire -t titrage --nbest $n $sampling_param $beam_param \
     > $output
 
 # postprocess translation
 cat $output | grep "H-" | perl -pe 's/^H-//' | sort -n | cut -f3 | perl -pe 's/ //g;s/▁/ /g'
 
-#rm $output $output.preproc
+rm $output $output.preproc
 
 
 

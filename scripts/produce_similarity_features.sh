@@ -27,7 +27,7 @@ for strategy in beam; do # sampling.0.95 sampling.0.9 sampling.0.8 sampling.0.7 
 	for k in $(seq 20); do
 	    echo "    --> number to use = $k"
 	    # produce features for the predicted files
-	    if [ ! -s $simdir/features/edsim.titrages.$pred_suffix.$type_calc.$k ]; then
+	    if [ ! -f $simdir/features/edsim.titrages.$pred_suffix.$type_calc.$k ]; then
 		OPENBLAS_NUM_THREADS=1 python $thisdir/edsim_files.py \
 		    $pred_titrage1_prefix.$pred_suffix \
 		    $pred_titrage2_prefix.$pred_suffix $type_calc -n 20 -k $k \
