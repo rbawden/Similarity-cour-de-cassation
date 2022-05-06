@@ -1,5 +1,7 @@
 # Complex Labelling and Similarity Prediction in Legal Texts: Automatic Analysis of France’s Court of Cassation Rulings
 
+(repository under construction)
+
 This code accompanies the LREC 2022 article of the above name. With the long-term goal of automatising the detection of divergence in the application of the law, we propose tools to (i) automatically generate keyword sequences for rulings from syntheses to improve coverage of these keyword sequence annotations (used for indexing) and (ii) calcualte the similarity of a given pair of rulings based on manually provided documents (the text of the rulings, syntheses and keyword sequences) as well as on the predicted keyword sequences from step (i).
 
 ## Citation
