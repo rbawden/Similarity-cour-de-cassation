@@ -1,5 +1,21 @@
-# Similarity-cour-de-cassation
+# Complex Labelling and Similarity Detection in Legal Texts: Automatic Analysis of France’s Court of Cassation Rulings
 
+This code accompanies the LREC 2022 article of the above name. With the long-term goal of automatising the detection of divergence in the application of the law, we propose tools to (i) automatically generate keyword sequences for rulings from syntheses to improve coverage of these keyword sequence annotations (used for indexing) and (ii) calcualte the similarity of a given pair of rulings based on manually provided documents (the text of the rulings, syntheses and keyword sequences) as well as on the predicted keyword sequences from step (i).
+
+## Citation
+
+If you use this work, please cite the following article:
+
+Thibault Charmet, Inès Cherichi, Matthieu Allain, Urszula Czerwinska, Amaury Fouret, Benoît Sagot and Rachel Bawden, 2022. **Complex Labelling and Similarity Detection in Legal Texts: Automatic Analysis of France’s Court of Cassation Rulings**. In Proceedings of the 13th Language Resources and Evaluation Conference, Marseille, France.
+
+```
+@inproceedings{charmet-et-al-2022-complex,
+  tite = {Complex Labelling and Similarity Detection in Legal Texts: Automatic Analysis of France’s Court of Cassation Rulings},
+  author = {Charmet, Thibault and Cherichi, Inès and Allain, Matthieu and Czerwinska, Urszula and Fouret, Amaury, and Sagot, Benoît and Bawden, Rachel},
+  booktitle = {Proceedings of the 13th Language Resources and Evaluation Conference},
+  year = {2022},
+  address = {Marseille, France}
+```
 
 ## Requirements
 
@@ -22,6 +38,7 @@ The full data repository should contain the following files:
 data/
  |
  |---- orig/
+ |     |-- arrets.csv
  |     |-- titres_and_sommaires.csv
  |     |-- meta_decisions_INRIA.csv
  |
@@ -62,6 +79,11 @@ The prepared data is provided in the zip folder, so there is no need to rerun da
 
 ### Automatic keyword sequence prediction ('titrage' in French)
 
+#### Download models
+
+TODO
+
+#### Generation
 Take examples consisting of the matter (first title; 'matière') concatenated to the synthesis ('sommaire') and predict the rest of the keyword sequence 'titrage'.
 
 ```
@@ -69,14 +91,27 @@ echo "MATIERE <t> SOMMAIRE" | bash scripts/translate-interactive.sh <model_path>
 
 echo "contrat <t> la convention collective du batiment doit être calculée en fonction ..." | \
     bash scripts/translate-interactive.sh \
-        models/sommaire2titrage/mini-joint/8000/model-1/checkpoint_best_micro_acc.pt \
+        models/sommaire2titrage/mini-joint/8000/model-1/checkpoint_best_weighted_acc.pt \
         data/bin/lowercase.sommaire-titrage.joint-sp8000 \
         data/preproc/spm.8000.lowercase.joint-sommaire-titrage.model
 ```
 
-TODO: check other types of preprocessing that must be applied for this model to work (e.g. apostrophes, lowercasing, accents?)
+Preprocessing is applied before translation:
+- lowercase
+- sentencepiece subword segmentation
+
+#### Evaluation
+Evaluation is run as follows, by comparing the hypothesis and reference file according to a specific criterion:
+```
+python scripts/evaluate.py <hyp_file> <ref_file> {global_acc,acc_per_level,weighted_acc,micro_acc}
+```
+E.g.
+
+TODO
 
 ### Similarity prediction
+
+#### Reproducing results
 
 The dataset and features are all provided, so there is no need to rerun generation, but for reproducibility purposes, the data and features are prepared as follows:
 
@@ -105,3 +140,10 @@ Features are output to `data/similarity/features/`
 bash scripts/get_sim_results.sh
 ```
 Results are output to `data/similarity/results/`
+
+
+#### Usable models released
+
+TODO
+
+
