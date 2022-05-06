@@ -1,0 +1,4 @@
+mlp.edsim.titrages.pred.camembert.beam.max.14	model type	mlp
+mlp.edsim.titrages.pred.camembert.beam.max.14	#features	1
+mlp.edsim.titrages.pred.camembert.beam.max.14	non-trained r	 0.6700526112779046
+mlp.edsim.titrages.pred.camembert.beam.max.14	trained r	0.6789533208939775

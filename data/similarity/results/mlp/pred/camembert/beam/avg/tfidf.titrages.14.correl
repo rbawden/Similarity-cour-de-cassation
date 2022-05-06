@@ -1,0 +1,4 @@
+mlp.tfidf.titrages.pred.camembert.beam.avg.14	model type	mlp
+mlp.tfidf.titrages.pred.camembert.beam.avg.14	#features	1
+mlp.tfidf.titrages.pred.camembert.beam.avg.14	non-trained r	 0.7419757033780556
+mlp.tfidf.titrages.pred.camembert.beam.avg.14	trained r	0.7634289692817676

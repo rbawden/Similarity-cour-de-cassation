@@ -1,0 +1,4 @@
+mlp.edsim.titrages.pred.camembert.beam.avg.18	model type	mlp
+mlp.edsim.titrages.pred.camembert.beam.avg.18	#features	1
+mlp.edsim.titrages.pred.camembert.beam.avg.18	non-trained r	 0.6216072259103669
+mlp.edsim.titrages.pred.camembert.beam.avg.18	trained r	0.6641684774945271

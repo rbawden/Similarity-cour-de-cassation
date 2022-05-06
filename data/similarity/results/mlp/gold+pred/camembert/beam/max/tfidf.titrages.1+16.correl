@@ -1,0 +1,4 @@
+mlp.tfidf.titrages.gold+pred.camembert.beam.max.1+16	model type	mlp
+mlp.tfidf.titrages.gold+pred.camembert.beam.max.1+16	#features	1
+mlp.tfidf.titrages.gold+pred.camembert.beam.max.1+16	non-trained r	 0.7122540029245458
+mlp.tfidf.titrages.gold+pred.camembert.beam.max.1+16	trained r	0.7743483751415369
