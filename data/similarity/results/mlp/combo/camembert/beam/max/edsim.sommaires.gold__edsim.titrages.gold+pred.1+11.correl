@@ -1,0 +1,4 @@
+mlp.edsim.sommaires.gold__edsim.titrages.gold+pred.camembert.beam.max.1+11	model type	mlp
+mlp.edsim.sommaires.gold__edsim.titrages.gold+pred.camembert.beam.max.1+11	#features	1
+mlp.edsim.sommaires.gold__edsim.titrages.gold+pred.camembert.beam.max.1+11	non-trained r	 0.6379947404747753
+mlp.edsim.sommaires.gold__edsim.titrages.gold+pred.camembert.beam.max.1+11	trained r	0.642459997577633

@@ -1,0 +1,4 @@
+mlp.tfidf.titrages.pred.camembert.beam.max.11	model type	mlp
+mlp.tfidf.titrages.pred.camembert.beam.max.11	#features	1
+mlp.tfidf.titrages.pred.camembert.beam.max.11	non-trained r	 0.6951881179972794
+mlp.tfidf.titrages.pred.camembert.beam.max.11	trained r	0.7518577038056962
