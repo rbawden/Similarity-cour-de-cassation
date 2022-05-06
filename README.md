@@ -38,6 +38,7 @@ The full data repository should contain the following files:
 data/
  |
  |---- orig/
+ |     |-- arrets.csv
  |     |-- titres_and_sommaires.csv
  |     |-- meta_decisions_INRIA.csv
  |
