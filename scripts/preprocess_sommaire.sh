@@ -11,4 +11,4 @@ if [ "$#" -ne 1 ]; then
 fi
 
 # apply sentencepiece
-perl -CS -Mutf8 -Mlocale -ne 'print lc' | python $thisdir/spm_encode.py --model $sp_model
+perl -CS -Mutf8 -Mlocale -ne 'print lc' | python $thisdir/spm_encode.py --model $sp_model | perl -pe 's/▁< t >/▁ <t>/g'

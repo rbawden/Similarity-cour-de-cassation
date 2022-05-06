@@ -29,28 +29,39 @@ fi
 module purge
 module load gnu8 cuda
 
+# choose one of these
+#model_name=joint-sp8000
+model_name=camembert
+
+if [[ $model_name == joint-sp8000 ]]; then
+    mt_model=model=$thisdir/../models/sommaire2titrage/joint/8000/model-1/checkpoint_best_weighted_acc.pt
+    sp_model=$thisdir/../data/preproc/spm.8000.lowercase.joint-sommaire-titrage.model
+elif [[ $model_name == camembert ]]; then
+    mt_model=$thisdir/../models/sommaire2titrage/camembert/model-1/checkpoint_best_weighted_acc.pt
+    sp_model=$thisdir/../data/preproc/spm_camembert.model
+fi
+data=$thisdir/../data/bin/lowercase.sommaire-titrage.$model_name
+
 # translate each of the sommaires (with matiere at the start separated by <t>)
 for sommaire_num in 1 2; do
     # first with beam search
-    if [ ! -f $thisdir/../data/similarity/predicted/titrages$sommaire_num.lower.joint-8000.20.beam.pred ]; then
+    
+    if [ ! -f $thisdir/../data/similarity/predicted/titrages$sommaire_num.lower.$model_name.20.beam.pred ]; then
 	paste $thisdir/../data/similarity/dataset/matiere$sommaire_num.lower.gold \
 	    $thisdir/../data/similarity/dataset/sommaire$sommaire_num.lower.gold | perl -pe 's/\t/ <t> /' | \
 	    bash $thisdir/translate-interactive.sh \
-	    $thisdir/../models/sommaire2titrage/joint/8000/model-1/checkpoint_best_weighted_acc.pt \
-	    $thisdir/../data/bin/lowercase.sommaire-titrage.joint-sp8000 \
-	    $thisdir/../data/preproc/spm.8000.lowercase.joint-sommaire-titrage.model 20 \
-	    > $thisdir/../data/similarity/predicted/titrages$sommaire_num.lower.joint-8000.20.beam.pred
+	    $mt_model $data $sp_model 20 \
+	    > $thisdir/../data/similarity/predicted/titrages$sommaire_num.lower.$model_name.20.beam.pred
     fi
     # now with sampling
     for temp in 0.5 0.6 0.7 0.8 0.9 0.95; do
-	if [ ! -f $thisdir/../data/similarity/predicted/titrages$sommaire_num.lower.joint-8000.20.sampling.$temp.pred ]; then
+	continue # skip for now
+	if [ ! -f $thisdir/../data/similarity/predicted/titrages$sommaire_num.lower.$model_name.20.sampling.$temp.pred ]; then
 	    paste $thisdir/../data/similarity/dataset/matiere$sommaire_num.lower.gold \
 		$thisdir/../data/similarity/dataset/sommaire$sommaire_num.lower.gold | perl -pe 's/\t/ <t> /' | \
 		bash $thisdir/translate-interactive.sh \
-		$thisdir/../models/sommaire2titrage/joint/8000/model-1/checkpoint_best_weighted_acc.pt \
-		$thisdir/../data/bin/lowercase.sommaire-titrage.joint-sp8000 \
-		$thisdir/../data/preproc/spm.8000.lowercase.joint-sommaire-titrage.model 20 $temp \
-		> $thisdir/../data/similarity/predicted/titrages$sommaire_num.lower.joint-8000.20.sampling.$temp.pred
+		$mt_model $data $sp_model 20 $temp \
+		> $thisdir/../data/similarity/predicted/titrages$sommaire_num.lower.$model_name.20.sampling.$temp.pred
 	fi
     done
 done

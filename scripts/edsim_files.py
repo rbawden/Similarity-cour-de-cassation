@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import editdistance, re
+import unicodedata
 
 def calculate_norm_edit_distance_similarity(list_t1, list_t2):
     return 1 - (editdistance.eval(list_t1, list_t2) / max(len(list_t1), len(list_t2)))
@@ -10,12 +11,15 @@ def create_list_from_titrage(t):
 def create_list_from_sommaire(s):
     return s.split()
 
+def remove_accents(text):
+    return unicodedata.normalize('NFD', text).encode('ascii', 'ignore').decode("utf-8")
+
 def read_sfile(filename, n=1):
     sommaires = []
     examples = []
     with open(filename) as fp:
         for l, line in enumerate(fp):
-            examples.append(create_list_from_sommaire(line.strip()))
+            examples.append(create_list_from_sommaire(remove_accents(line.strip().lower())))
             if len(examples) == n:
                 sommaires.append(examples)
                 examples = []
@@ -27,7 +31,7 @@ def read_tfile(filename, n=1):
     examples = []
     with open(filename) as fp:
         for l, line in enumerate(fp):
-            examples.append(create_list_from_titrage(line.strip()))
+            examples.append(create_list_from_titrage(remove_accents(line.strip().lower())))
             if len(examples) == n:
                 titrages.append(examples)
                 examples = []

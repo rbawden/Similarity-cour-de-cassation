@@ -40,30 +40,34 @@ mv $datadir/arrets2 $datadir/arret2.lower.gold
 # Prediction must have already been run for this step.
 
 # sampling
-for num in 1 2; do
-    for temp in 0.5 0.6 0.7 0.8 0.9 0.95; do
-	if [ ! -f $pred_datadir/titrages$num.lower.joint-8000.20.sampling.$temp.pred ]; then
-	    echo "Missing file: $pred_datadir/titrages$num.lower.joint-8000.20.sampling.$temp.pred"
+for mt_model in joint-8000 camembert; do
+    for num in 1 2; do
+	for temp in 0.5 0.6 0.7 0.8 0.9 0.95; do
+	    if [ ! -f $pred_datadir/titrages$num.lower.$mt_model.20.sampling.$temp.pred ]; then
+		echo "Missing file: $pred_datadir/titrages$num.lower.$mt_model.20.sampling.$temp.pred"
+		echo "You must first run the generation of predicted keyword sequences."
+		echo "Run 'sbatch scripts/predict_titrages.slurm' and then rerun this script"
+		#echo "Exiting now."
+		#exit
+	    else
+		python $thisdir/concatenate_gold_pred_titrages.py \
+		    $datadir/titrage$num.lower.gold $pred_datadir/titrages1.lower.$mt_model.20.sampling.$temp.pred \
+		    > $pred_datadir/titrages$num.lower.$mt_model.1+20.sampling.$temp.gold+pred
+	    fi
+	done
+	
+	# beam search
+	if [ ! -f $pred_datadir/titrages$num.lower.$mt_model.20.beam.pred ]; then
+	    echo "Missing file: $pred_datadir/titrages$num.lower.$mt_model.20.beam.pred"
 	    echo "You must first run the generation of predicted keyword sequences."
 	    echo "Run 'sbatch scripts/predict_titrages.slurm' and then rerun this script"
-	    echo "Exiting now."
-	    exit
+	    #echo "Exiting now."
+	    #exit
+	else
+	    python $thisdir/concatenate_gold_pred_titrages.py \
+		$datadir/titrage$num.lower.gold \
+		$pred_datadir/titrages$num.lower.$mt_model.20.beam.pred \
+		> $pred_datadir/titrages$num.lower.$mt_model.1+20.beam.gold+pred
 	fi
-	python $thisdir/concatenate_gold_pred_titrages.py \
-	    $datadir/titrage$num.lower.gold $pred_datadir/titrages1.lower.joint-8000.20.sampling.$temp.pred \
-	    > $pred_datadir/titrages$num.lower.joint-8000.1+20.sampling.$temp.gold+pred
     done
-    
-    # beam search
-    if [ ! -f $pred_datadir/titrages$num.lower.joint-8000.20.beam.pred ]; then
-	echo "Missing file: $pred_datadir/titrages$num.lower.joint-8000.20.beam.pred"
-	echo "You must first run the generation of predicted keyword sequences."
-	echo "Run 'sbatch scripts/predict_titrages.slurm' and then rerun this script"
-	echo "Exiting now."
-	exit
-    fi
-    python $thisdir/concatenate_gold_pred_titrages.py \
-	$datadir/titrage$num.lower.gold \
-	$pred_datadir/titrages$num.lower.joint-8000.20.beam.pred \
-	> $pred_datadir/titrages$num.lower.joint-8000.1+20.beam.gold+pred
 done

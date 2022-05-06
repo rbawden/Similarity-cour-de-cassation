@@ -15,7 +15,7 @@ fi
 echo "Selecting best checkpoint based on the outputs in $valid_outputs_dir"
 
 #criterion=weighted_acc
-criterion=micro_acc
+criterion=weighted_acc # change to weighted_acc or micro_acc
 best_score=-1
 best_checkpoint=None
 if [ -f $valid_outputs_dir/../valid.$criterion.eval ]; then

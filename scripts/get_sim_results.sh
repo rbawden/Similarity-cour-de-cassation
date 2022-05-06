@@ -114,7 +114,7 @@ for model in mlp; do
 	[ -d $resdir/$subfolder ] || mkdir $resdir/$subfolder
     done
     # add other MT model types here
-    for mt_model in joint-8000 camembert; do
+    for mt_model in camembert joint-8000; do
 	for subfolder in pred gold+pred combo; do
 	    [ -d $resdir/$subfolder/$mt_model ] || mkdir $resdir/$subfolder/$mt_model
 	done
@@ -144,11 +144,15 @@ for model in mlp; do
 		    
 		    # predicted
 		    echo $predresdir/edsim.titrages.$k.correl
+		    echo "paste $edsim_titrages_pred.$strategy.pred.$calc.$k | \
+                        OPENBLAS_NUM_THREADS=1 python $thisdir/correlation_sim.py -g $labels -m \
+                        $model -n "$model.edsim.titrages.pred.$mt_model.$strategy.$calc.$k" > $predresdir/edsim.titrages.$k.correl"
 		    if [ ! -s $predresdir/edsim.titrages.$k.correl ]; then
 			paste $edsim_titrages_pred.$strategy.pred.$calc.$k | \
 			OPENBLAS_NUM_THREADS=1 python $thisdir/correlation_sim.py -g $labels -m \
 			$model -n "$model.edsim.titrages.pred.$mt_model.$strategy.$calc.$k" > $predresdir/edsim.titrages.$k.correl
 		    fi
+		    read 
 
 		    echo $predresdir/tfidf.titrages.$k.correl
 		    if [ ! -s $predresdir/tfidf.titrages.$k.correl ]; then
