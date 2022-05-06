@@ -3,6 +3,7 @@
 
 ## Requirements
 
+Tested with python3.7
 ```
 python3 -m venv env
 source env/bin/activate
@@ -11,11 +12,11 @@ pip install -r requirements.txt
 
 ## Data
 
-The data is distributed under the licence specified in XXX. To obtain the data, please contact XXX. Once you have obtained the data, unzip the folder and place it at the root of the repository.
+The data is distributed under the licence specified in XXX. To obtain the data, please contact XXX. 
 
-Your data repository should contain the following files:
+Once you have obtained the data, unzip the folder and place it at the root of the repository. The current repository contains a partial version of this data, containing just the extracted features and correlation results.
 
-TODO: structure of files
+The full data repository should contain the following files:
 
 ```
 data/
@@ -38,10 +39,18 @@ data/
  |     |-- {train,valid,test}.lowercase.sommaitre-titrage.camembert.{sommaire,titrage} (segmented text)
  |
  |---- bin/
- |     |-- 
+ |     |-- lowercase.sommaire-titrage.joint-sp{8,16,24,32}000/
+ |     |-- lowercase.sommaire-titrage.joint-sp{8,16,24,32}000.nojoin/
+ |     |-- lowercase.sommaire-titrage.camembert/
+ |
+ |---- similarity/
+ |     |-- dataset/
+ |     |-- predicted/
+ |     |-- features/
+ |     |-- results/
 ```
 
-`orig/` contains the original files will all raw information, `final/` the cleaned dataset splits, `preproc/` the preprocessed files (lowercasing and sentencepiece segmentation) and `bin/` the binarised files to be used by fairseq.
+`orig/` contains the original files will all raw information, `final/` the cleaned dataset splits, `preproc/` the preprocessed files (lowercasing and sentencepiece segmentation) and `bin/` the binarised files to be used by fairseq. The similarity data is found in the `similarity/` subfolder, with the original (gold) data in `similarity/dataset/`, the predicted keyword sequences in `similarity/predicted/`, the extracted features in `similarity/features/` and select correlation results in `similarity/results/`.
 
 ## Prepare the data
 
