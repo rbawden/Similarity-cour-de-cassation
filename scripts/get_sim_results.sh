@@ -17,11 +17,6 @@ edsim_arrets_gold=$feature_dir/edsim.arrets.gold
 edsim_sommaires_gold=$feature_dir/edsim.sommaires.gold
 edsim_titrages_gold=$feature_dir/edsim.titrages.gold
 
-
-# features based on pred
-mt_model=joint-8000
-
-
 # potentially add models here
 for model in mlp; do
     # make a separate folder for this model
