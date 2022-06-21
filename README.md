@@ -19,7 +19,13 @@ Thibault Charmet, Inès Cherichi, Matthieu Allain, Urszula Czerwinska, Amaury Fo
   address = {Marseille, France}
 ```
 
-## Requirements
+## Easily usable models released
+
+TODO
+
+## Reproducing the results in the article
+
+### Requirements
 
 Tested with python3.7
 ```
@@ -28,7 +34,7 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-## Data
+### Data
 
 The data is distributed under the licence specified in XXX. To obtain the data, please contact XXX. 
 
@@ -71,21 +77,21 @@ data/
 
 `orig/` contains the original files will all raw information, `final/` the cleaned dataset splits, `preproc/` the preprocessed files (lowercasing and sentencepiece segmentation) and `bin/` the binarised files to be used by fairseq. The similarity data is found in the `similarity/` subfolder, with the original (gold) data in `similarity/dataset/`, the predicted keyword sequences in `similarity/predicted/`, the extracted features in `similarity/features/` and select correlation results in `similarity/results/`.
 
-## Prepare the data
+### Prepare the data
 
 The prepared data is provided in the zip folder, so there is no need to rerun data preparation. For reproducibility purposes, the script to prepare the data from the original files found in `data/orig/` is provided:
 
 `bash scripts/prepare_data.sh`
 
-## Models
+### Models
 
-### Automatic keyword sequence prediction ('titrage' in French)
+#### Automatic keyword sequence prediction ('titrage' in French)
 
-#### Download models
+##### Download models
 
 TODO
 
-#### Generation
+##### Generation
 Take examples consisting of the matter (first title; 'matière') concatenated to the synthesis ('sommaire') and predict the rest of the keyword sequence 'titrage'.
 
 ```
@@ -102,7 +108,7 @@ Preprocessing is applied before translation:
 - lowercase
 - sentencepiece subword segmentation
 
-#### Evaluation
+##### Evaluation
 Evaluation is run as follows, by comparing the hypothesis and reference file according to a specific criterion:
 ```
 python scripts/evaluate.py <hyp_file> <ref_file> {global_acc,acc_per_level,weighted_acc,micro_acc}
@@ -111,9 +117,9 @@ E.g.
 
 TODO
 
-### Similarity prediction
+#### Similarity prediction
 
-#### Reproducing results
+##### Reproducing results
 
 The dataset and features are all provided, so there is no need to rerun generation, but for reproducibility purposes, the data and features are prepared as follows:
 
@@ -144,8 +150,6 @@ bash scripts/get_sim_results.sh
 Results are output to `data/similarity/results/`
 
 
-#### Usable models released
 
-TODO
 
 
