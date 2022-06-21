@@ -21,7 +21,33 @@ Thibault Charmet, Inès Cherichi, Matthieu Allain, Urszula Czerwinska, Amaury Fo
 
 ## Easily usable models released
 
-TODO
+The original experiments are run using Fairseq and you can find instructions to reproduce these experiments and run the Fairseq models. For ease of use, we also make some models available on HuggingFace.
+
+### Automatic keyword sequence prediction 
+
+The model can be found [here](https://huggingface.co/rbawden/CCASS-auto-titrages-base).
+
+Model input is the *matière* (matter) concatenated to the text from the sommaire separated by the token `<t>`. Each example should be on a single line. E.g. `bail <t> La recommendation du tribunal selon l'article...` (fictive example for illustrative purposes. The maximum input length of the model is 1024 input tokens (after tokenisation).
+
+```
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+tokeniser = AutoTokenizer.from_pretrained("rbawden/CCASS-auto-titrages-base", use_auth_token=True)
+model = AutoModelForSeq2SeqLM.from_pretrained("rbawden/CCASS-auto-titrages-base", use_auth_token=True)
+
+matiere = "matter"
+sommaire = "full text from the sommaire on a single line"
+inputs = tokeniser([matiere + " <t> " + sommaire], return_tensors='pt')
+outputs = model.generate(inputs['input_ids'])
+tokeniser.batch_decode(outputs, skip_special_tokens=True, clean_up_tokenisation_spaces=True)
+```
+
+The model is the 8k joint BPE vocabulary Fairseq model, converted to HuggingFace and then fine-tuned to remove incoherences in the original and converted model.
+
+### Semi-automatic keyword sequence prediction
+
+We also make a second model available to enable semi-automatic keyword sequence prediction (predict a keyword from the synthesis, matter and the beginning of the keyword sequence.
+
 
 ## Reproducing the results in the article
 
