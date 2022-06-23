@@ -62,7 +62,7 @@ pip install -r requirements.txt
 
 ### Data
 
-The data is distributed under the licence specified in XXX. To obtain the data, please contact XXX. 
+The data is distributed under the licence specified in XXX. To obtain the data, please contact XXX. (Access to data to be added very soon!)
 
 Once you have obtained the data, unzip the folder and place it at the root of the repository. The current repository contains a partial version of this data, containing just the extracted features and correlation results.
 
