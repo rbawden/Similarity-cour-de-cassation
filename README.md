@@ -66,9 +66,14 @@ tokeniser.batch_decode(outputs, skip_special_tokens=True, clean_up_tokenisation_
 To predict the similarity of two cases, use `scripts/predict_similarity.py` as follows:
   
 ```
-
-
- ```
+python scripts/predidct_similarity.py \
+      -g data/similarity/dataset/titrage1.lower.gold data/similarity/dataset/titrage2.lower.gold \
+      -p data/similarity/predicted/titrages1.lower.joint-8000.20.beam.pred.tab-sep data/similarity/predicted/titrages2.lower.joint-8000.20.beam.pred.tab-sep \
+      -s data/similarity/dataset/sommaire1.lower.gold data/similarity/dataset/sommaire2.lower.gold  -m models/edsim.sommaire-gold.titrage-gold.titrage-pred-3.pickle -n 3
+```
+where the two arguments to `-g` are the two files containing gold keyword sequences, the two arguments to `-p` are the two files containing predicted keyword sequences and the two arguments to `-s` are the two files containing gold syntheses.
+  
+In each file, there should be one example per line. When there are multiple syntheses/sequences for one example, these should be written on the same line, separated by tabs. Neither keyword sequences nor syntheses should contain tabs or newlines (these should be replaced with spaces beforehand). No additional processing needs to be applied (other than removing non-printing characters or cleaning encoding problems if they occur).
 
 ## Reproducing the results in the article
 
