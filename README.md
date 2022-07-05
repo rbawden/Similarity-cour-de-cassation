@@ -175,8 +175,12 @@ Evaluation is run as follows, by comparing the hypothesis and reference file acc
 python scripts/evaluate.py <hyp_file> <ref_file> {global_acc,acc_per_level,weighted_acc,micro_acc}
 ```
 E.g.
-
-TODO
+```
+python scripts/evaluate.py models/sommaire2titrage/joint/8000/model-1/valid_outputs/checkpoint62.pt.postproc data/final/valid.lowercase.titrage weighted_acc
+>> 34.897
+python scripts/evaluate.py models/sommaire2titrage/joint/8000/model-1/valid_outputs/checkpoint62.pt.postproc data/final/valid.lowercase.titrage acc_per_level
+>> [71, 51, 33, 21, 13, 9, 7, 7, 6, 4, 8, 14, 0]
+```
 
 #### Similarity prediction
 
