@@ -23,7 +23,7 @@ Thibault Charmet, Inès Cherichi, Matthieu Allain, Urszula Czerwinska, Amaury Fo
 
 The original experiments are run using Fairseq and you can find instructions to reproduce these experiments and run the Fairseq models. For ease of use, we also make some models available on HuggingFace.
 
-See you [`scripts/Example-prediction-similarity.ipynb`](https://github.com/rbawden/Similarity-cour-de-cassation/blob/main/scripts/Example-prediction-similarity.ipynb) for a concrete example of similarity prediction.
+See [`scripts/Example-prediction-similarity.ipynb`](https://github.com/rbawden/Similarity-cour-de-cassation/blob/main/scripts/Example-prediction-similarity.ipynb) for a concrete example of similarity prediction.
 
 ### Automatic keyword sequence prediction 
 
