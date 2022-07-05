@@ -46,7 +46,23 @@ The model is the 8k joint BPE vocabulary Fairseq model, converted to HuggingFace
 
 ### Semi-automatic keyword sequence prediction
 
-We also make a second model available to enable semi-automatic keyword sequence prediction (predict a keyword from the synthesis, matter and the beginning of the keyword sequence.
+We also make a second model available to enable semi-automatic keyword sequence prediction (predict a keyword from the synthesis, matter and the beginning of the keyword sequence. The input should be formatted as follows: the matter, the keyword sequence prefix and the synthesis should be concatenated, each separated by the `<t>` token, which should also be used to separated individual keywords within the sequence. E.g. If the matter is "contrat" and the prefix sequence is "resiliation <t> travail <t> légal" (keywords chosen randomly for illustrative purposes), the input will be "contrat <t> resiliation <t> travail <t> légal <t> " followed by the content of the synthesis.
+
+```
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+tokeniser = AutoTokenizer.from_pretrained("rbawden/CCASS-semi-auto-titrages-base", use_auth_token=True)
+model = AutoModelForSeq2SeqLM.from_pretrained("rbawden/CCASS-semi-auto-titrages-base", use_auth_token=True)
+
+matiere_and_titrage_prefix = "matter <t> titre"
+sommaire = "full text from the sommaire on a single line"
+inputs = tokeniser([matiere_and_titrage_prefix + " <t> " + sommaire], return_tensors='pt')
+outputs = model.generate(inputs['input_ids'])
+tokeniser.batch_decode(outputs, skip_special_tokens=True, clean_up_tokenisation_spaces=True)
+```
+
+### Similarity prediction
+
 
 
 ## Reproducing the results in the article
