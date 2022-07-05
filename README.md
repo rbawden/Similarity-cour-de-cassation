@@ -16,7 +16,9 @@ Thibault Charmet, Inès Cherichi, Matthieu Allain, Urszula Czerwinska, Amaury Fo
   author = {Charmet, Thibault and Cherichi, Inès and Allain, Matthieu and Czerwinska, Urszula and Fouret, Amaury, and Sagot, Benoît and Bawden, Rachel},
   booktitle = {Proceedings of the 13th Language Resources and Evaluation Conference},
   year = {2022},
-  address = {Marseille, France}
+  address = {Marseille, France},
+  pages = {4754‑4766}
+}
 ```
 
 ## Easily usable models released
@@ -34,8 +36,8 @@ Model input is the *matière* (matter) concatenated to the text from the sommair
 ```
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-tokeniser = AutoTokenizer.from_pretrained("rbawden/CCASS-auto-titrages-base", use_auth_token=True)
-model = AutoModelForSeq2SeqLM.from_pretrained("rbawden/CCASS-auto-titrages-base", use_auth_token=True)
+tokeniser = AutoTokenizer.from_pretrained("rbawden/CCASS-auto-titrages-base")
+model = AutoModelForSeq2SeqLM.from_pretrained("rbawden/CCASS-auto-titrages-base")
 
 matiere = "matter"
 sommaire = "full text from the sommaire on a single line"
@@ -53,8 +55,8 @@ We also make a second model available to enable semi-automatic keyword sequence 
 ```
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-tokeniser = AutoTokenizer.from_pretrained("rbawden/CCASS-semi-auto-titrages-base", use_auth_token=True)
-model = AutoModelForSeq2SeqLM.from_pretrained("rbawden/CCASS-semi-auto-titrages-base", use_auth_token=True)
+tokeniser = AutoTokenizer.from_pretrained("rbawden/CCASS-semi-auto-titrages-base")
+model = AutoModelForSeq2SeqLM.from_pretrained("rbawden/CCASS-semi-auto-titrages-base")
 
 matiere_and_titrage_prefix = "matter <t> titre"
 sommaire = "full text from the sommaire on a single line"
