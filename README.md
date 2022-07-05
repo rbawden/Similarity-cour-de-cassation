@@ -17,7 +17,7 @@ Thibault Charmet, Inès Cherichi, Matthieu Allain, Urszula Czerwinska, Amaury Fo
   booktitle = {Proceedings of the 13th Language Resources and Evaluation Conference},
   year = {2022},
   address = {Marseille, France},
-  pages = {4754‑4766}
+  pages = {4754--4766}
 }
 ```
 
