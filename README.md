@@ -63,7 +63,12 @@ tokeniser.batch_decode(outputs, skip_special_tokens=True, clean_up_tokenisation_
 
 ### Similarity prediction
 
+To predict the similarity of two cases, use `scripts/predict_similarity.py` as follows:
+  
+```
 
+
+ ```
 
 ## Reproducing the results in the article
 
