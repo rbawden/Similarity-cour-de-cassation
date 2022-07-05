@@ -8,7 +8,7 @@ This code accompanies the LREC 2022 article of the above name. With the long-ter
 
 If you use this work, please cite the following article:
 
-[Thibault Charmet, Inès Cherichi, Matthieu Allain, Urszula Czerwinska, Amaury Fouret, Benoît Sagot and Rachel Bawden, 2022. **Complex Labelling and Similarity Prediction in Legal Texts: Automatic Analysis of France’s Court of Cassation Rulings**. In Proceedings of the 13th Language Resources and Evaluation Conference, Marseille, France.](http://www.lrec-conf.org/proceedings/lrec2022/pdf/2022.lrec-1.509.pdf)
+Thibault Charmet, Inès Cherichi, Matthieu Allain, Urszula Czerwinska, Amaury Fouret, Benoît Sagot and Rachel Bawden, 2022. [**Complex Labelling and Similarity Prediction in Legal Texts: Automatic Analysis of France’s Court of Cassation Rulings**](http://www.lrec-conf.org/proceedings/lrec2022/pdf/2022.lrec-1.509.pdf). In Proceedings of the 13th Language Resources and Evaluation Conference, Marseille, France.]
 
 ```
 @inproceedings{charmet-et-al-2022-complex,
