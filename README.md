@@ -67,6 +67,13 @@ To predict the similarity of two cases, use `scripts/predict_similarity.py` as f
   
 ```
 python scripts/predidct_similarity.py \
+      -g GOLD_KEYWORD_SEQ_1 GOLD_KEYWORD_SEQ_2 \
+      -p PRED_KEYWORD_SEQ_1 PRED_KEYWORD_SEQ_2 \
+      -s GOLD_SYNTHESIS_1 GOLD_SYNTHESIS_2 \  -m models/edsim.sommaire-gold.titrage-gold.titrage-pred-3.pickle \
+      -n NUM_PRED_TITRAGES_TO_USE \
+      -m SIM_PRED_MODEL_PATH
+  
+python scripts/predidct_similarity.py \
       -g data/similarity/dataset/titrage1.lower.gold data/similarity/dataset/titrage2.lower.gold \
       -p data/similarity/predicted/titrages1.lower.joint-8000.20.beam.pred.tab-sep data/similarity/predicted/titrages2.lower.joint-8000.20.beam.pred.tab-sep \
       -s data/similarity/dataset/sommaire1.lower.gold data/similarity/dataset/sommaire2.lower.gold  -m models/edsim.sommaire-gold.titrage-gold.titrage-pred-3.pickle -n 3
