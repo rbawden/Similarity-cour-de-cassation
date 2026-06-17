@@ -121,11 +121,11 @@ data/
  |     |-- {train,valid,test}.lowercase.{matiere,sommaire,titrage}
  |
  |---- preproc/
- |     |-- {train,valid,test}.lowercase.sommaitre-titrage.{sommaire,titrage} (original lowercased files)
+ |     |-- {train,valid,test}.lowercase.sommaire-titrage.{sommaire,titrage} (original lowercased files)
  |     |-- spm.{8,16,24,32}000.joint-sommaire-titrage.{model,vocab} (sentencepiece models)
- |     |-- spm_camembert.{model,vocab} (CamemBERT sentencepiece model)
- |     |-- {train,valid,test}.lowercase.sommaitre-titrage.joint-sp{8,16,24,32}.{sommaire,titrage} (segmented text)
- |     |-- {train,valid,test}.lowercase.sommaitre-titrage.camembert.{sommaire,titrage} (segmented text)
+ |     |-- spm_camembert.model (CamemBERT sentencepiece model)
+ |     |-- {train,valid,test}.lowercase.sommaire-titrage.joint-sp{8,16,24,32}000.{sommaire,titrage} (segmented text)
+ |     |-- {train,valid,test}.lowercase.sommaire-titrage.camembert.{sommaire,titrage} (segmented text)
  |
  |---- bin/
  |     |-- lowercase.sommaire-titrage.joint-sp{8,16,24,32}000/
